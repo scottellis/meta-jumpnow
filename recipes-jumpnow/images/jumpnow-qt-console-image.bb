@@ -11,13 +11,7 @@ QT_TOOLS = " \
 	libqtnetwork4 \
  "
 
-OPENCV_TOOLS = " \
-	opencv-dev \
-	opencv-samples \
- "
-
 IMAGE_INSTALL += " \
 	${QT_TOOLS} \
-	${OPENCV_TOOLS} \
  "
 
