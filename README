@@ -1,0 +1,16 @@
+This layer depends on:
+
+URI: git://git.yoctoproject.org/poky.git
+branch: master
+revision: HEAD
+
+URI: git://git.openembedded.org/meta-openembedded
+branch: master
+revision: HEAD
+
+URI: git://www.sakoman.com/git/meta-sakoman
+branch: master
+revision: HEAD
+
+Main layer maintainer: Scott Ellis <scott@jumpnowtek.com>
+
