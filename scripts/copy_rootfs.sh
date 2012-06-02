@@ -31,7 +31,6 @@ if [ -b $DEV ]; then
 #	sudo tar -C /media/card -xvjf core-image-minimal-overo.tar.bz2
 #	sudo tar -C /media/card -xvjf jumpnow-console-image-overo.tar.bz2
 	sudo tar -C /media/card -xvjf jumpnow-qt-console-image-overo.tar.bz2
-#	sudo tar -C /media/card -xvjf jumpnow-qt-systemd-image-overo.tar.bz2
 
 	echo "Syncing disk"
 	sync
