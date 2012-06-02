@@ -28,11 +28,17 @@ if [ -b $DEV ]; then
 	echo "Mounting $DEV"
 	sudo mount ${DEV} /media/card
 
-	echo "Copying MLO"
-	sudo cp MLO /media/card/MLO
+# Don't use Yocto built MLO/u-boot, broken for some COMs 
+#	echo "Copying MLO"
+#	sudo cp MLO /media/card/MLO
+#	echo "Copying u-boot"
+#	sudo cp u-boot.img /media/card/u-boot.img
 
-	echo "Copying u-boot"
-	sudo cp u-boot.img /media/card/u-boot.img
+# Use OE-classic built versions that were copied to a classic/ dir manually
+	echo "Copying OE-classic MLO"
+	sudo cp classic/MLO-overo /media/card/MLO
+	echo "Copying OE-classic u-boot"
+	sudo cp classic/u-boot-overo.bin /media/card/u-boot.bin
 
 	if [ -f boot.scr ]; then
 		echo "Copying boot.scr"
