@@ -36,9 +36,9 @@ if [ -b $DEV ]; then
 
 # Use OE-classic built versions that were copied to a classic/ dir manually
 	echo "Copying OE-classic MLO"
-	sudo cp classic/MLO-overo /media/card/MLO
+	sudo cp classicboot/MLO-overo /media/card/MLO
 	echo "Copying OE-classic u-boot"
-	sudo cp classic/u-boot-overo.bin /media/card/u-boot.bin
+	sudo cp classicboot/u-boot-overo.bin /media/card/u-boot.bin
 
 	if [ -f boot.scr ]; then
 		echo "Copying boot.scr"
