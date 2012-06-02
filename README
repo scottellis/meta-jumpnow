@@ -3,7 +3,7 @@ This layer depends on:
 URI: git://git.yoctoproject.org/poky.git
 branch: denzil
 revision: HEAD
-commit: 3bf8069
+commit: 7552ccd
 
 URI: git://git.openembedded.org/meta-openembedded
 branch: denzil
@@ -19,3 +19,18 @@ Main layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
 Some notes can be found here [http://www.jumpnowtek.com/index.php?option=com_content&view=article&id=85]
 
+Important note: The MLO/u-boot combination built from meta-sakoman does not work
+with either of my 512M RAM COMs. The systems will fail under load. 256M COMs are 
+okay. 
+
+To get around this, I am substituting an MLO/u-boot combination built with OE-classic. 
+
+The u-boot and MLO I am using can be found here 
+
+http://www.jumpnowtek.com/Downloads/bootloader-for-Yocto-builds/
+
+Copy the MLO-overo and u-boot-over.bin found there to a $OETMP/deploy/images/classic
+directory if you want to use the meta-jumpnow/scripts/copy_boot.sh script.
+
+With this change, the images built here are stable and can build and run Syntro a
+somewhat large Qt library and set of executables.
