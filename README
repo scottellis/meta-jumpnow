@@ -17,7 +17,9 @@ commit: 2be46a3
 
 Main layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
-Some notes can be found here [http://www.jumpnowtek.com/index.php?option=com_content&view=article&id=85]
+Some notes for setting up and using this repository can be found here 
+
+[http://www.jumpnowtek.com/index.php?option=com_content&view=article&id=85]
 
 Important note: The MLO/u-boot combination built from meta-sakoman does not work
 with either of my 512M RAM COMs. The systems will fail under load. 256M COMs are 
