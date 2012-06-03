@@ -30,10 +30,6 @@ And here are my diffs to the default ~/poky/build/conf/local.conf
 +MACHINE ?= "overo"
 
 
-+#PACKAGE_CLASSES ?= "package_rpm"
-+PACKAGE_CLASSES ?= "package_ipk"
-
-
 +#SDKMACHINE ?= "i686"
 +SDKMACHINE ?= "x86_64"
 
