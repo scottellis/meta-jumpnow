@@ -13,7 +13,7 @@ commit: 24e1ebc
 URI: git://www.sakoman.com/git/meta-sakoman
 branch: master
 revision: HEAD
-commit: 5ad3d0d
+commit: 2be46a3
 
 Main layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
@@ -29,7 +29,7 @@ The u-boot and MLO I am using can be found here
 
 http://www.jumpnowtek.com/Downloads/bootloader-for-Yocto-builds/
 
-Copy the MLO-overo and u-boot-over.bin found there to a $OETMP/deploy/images/classic
+Copy the MLO-overo and u-boot-over.bin found there to a $OETMP/deploy/images/classicboot
 directory if you want to use the meta-jumpnow/scripts/copy_boot.sh script.
 
 With this change, the images built here are stable and can build and run Syntro a
