@@ -1,5 +1,7 @@
 #!/bin/bash
 
+USE_YOCTO_BOOTFILES="no"
+
 if [ "x${1}" = "x" ]; then
 	echo -e "\nUsage: ${0} <block device>\n"
 	exit 0
@@ -28,17 +30,17 @@ if [ -b $DEV ]; then
 	echo "Mounting $DEV"
 	sudo mount ${DEV} /media/card
 
-# Don't use Yocto built MLO/u-boot, broken for some COMs 
-#	echo "Copying MLO"
-#	sudo cp MLO /media/card/MLO
-#	echo "Copying u-boot"
-#	sudo cp u-boot.img /media/card/u-boot.img
-
-# Use OE-classic built versions that were copied to a classic/ dir manually
-	echo "Copying OE-classic MLO"
-	sudo cp classicboot/MLO-overo /media/card/MLO
-	echo "Copying OE-classic u-boot"
-	sudo cp classicboot/u-boot-overo.bin /media/card/u-boot.bin
+	if [ "${USE_YOCTO_BOOTFILES}" = "yes" ]; then
+		echo "Copying MLO"
+		sudo cp MLO /media/card/MLO
+		echo "Copying u-boot"
+		sudo cp u-boot.img /media/card/u-boot.img
+	else
+		echo "Copying OE-classic MLO"
+		sudo cp classicboot/MLO-overo /media/card/MLO
+		echo "Copying OE-classic u-boot"
+		sudo cp classicboot/u-boot-overo.bin /media/card/u-boot.bin
+	fi
 
 	if [ -f boot.scr ]; then
 		echo "Copying boot.scr"
