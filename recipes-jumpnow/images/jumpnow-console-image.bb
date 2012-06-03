@@ -8,6 +8,7 @@ BASE_INSTALL = " \
     coreutils \
     less \
     findutils \
+    rpm \
  "
 
 # refine this later, certainly don't need all kernel modules in the default config
