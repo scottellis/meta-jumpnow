@@ -8,12 +8,23 @@ BASE_INSTALL = " \
     coreutils \
     less \
     findutils \
-    rpm \
+ "
+#   rpm \
+
+KERNEL_MODULES_FTDI_SERIAL = " \
+    kernel-module-usbserial \
+    kernel-module-ftdi-sio \
  "
 
-# refine this later, certainly don't need all kernel modules in the default config
+KERNEL_MODULES_UVCVIDEO = " \
+    kernel-module-media \
+    kernel-module-videodev \
+    kernel-module-uvcvideo \
+ "
+
 KERNEL_EXTRA_INSTALL = " \
-    kernel-modules \
+    ${KERNEL_MODULES_FTDI_SERIAL} \
+    ${KERNEL_MODULES_UVCVIDEO} \
  "
 
 DEV_SDK_INSTALL = " \
