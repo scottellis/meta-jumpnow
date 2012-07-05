@@ -52,6 +52,7 @@ DEV_EXTRA_TOOLS_INSTALL = " \
     devmem2 \
     git \
     vim-tiny \
+    iperf \
  "
 
 IMAGE_INSTALL += " \	
