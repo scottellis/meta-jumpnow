@@ -21,8 +21,6 @@ Some notes for setting up and using this repository can be found here
 
 [http://www.jumpnowtek.com/index.php?option=com_content&view=article&id=85]
 
-Note: The MLO/u-boot issue has been fixed with a U-Boot commit by Steve Sakoman
-[commit - b1d4c26].
+Updated for last commit
 
-The workaround to use older bootloader code is no longer required.
-
+commit: 22fbd65
