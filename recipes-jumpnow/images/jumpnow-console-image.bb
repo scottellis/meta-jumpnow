@@ -8,8 +8,8 @@ BASE_INSTALL = " \
     coreutils \
     less \
     findutils \
+    rpm \
  "
-#   rpm \
 
 KERNEL_MODULES_FTDI_SERIAL = " \
     kernel-module-usbserial \
@@ -22,9 +22,15 @@ KERNEL_MODULES_UVCVIDEO = " \
     kernel-module-uvcvideo \
  "
 
+# Custom kernel modules built out of tree
+KERNEL_MODULES_OOT = " \
+    pwm-module \
+ "
+
 KERNEL_EXTRA_INSTALL = " \
     ${KERNEL_MODULES_FTDI_SERIAL} \
     ${KERNEL_MODULES_UVCVIDEO} \
+    ${KERNEL_MODULES_OOT} \
  "
 
 DEV_SDK_INSTALL = " \
@@ -53,6 +59,7 @@ DEV_EXTRA_TOOLS_INSTALL = " \
     git \
     vim-tiny \
     iperf \
+    libusb1-dev \
  "
 
 IMAGE_INSTALL += " \	
