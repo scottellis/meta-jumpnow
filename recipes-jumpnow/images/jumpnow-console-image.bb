@@ -8,7 +8,6 @@ BASE_INSTALL = " \
     coreutils \
     less \
     findutils \
-    rpm \
  "
 
 KERNEL_MODULES_FTDI_SERIAL = " \
@@ -60,6 +59,12 @@ DEV_EXTRA_TOOLS_INSTALL = " \
     vim-tiny \
     iperf \
     libusb1-dev \
+    systemd-analyze \
+ "
+
+OPENCV_DEV = " \
+    opencv-dev \
+    opencv-samples-dev \
  "
 
 IMAGE_INSTALL += " \	
@@ -67,5 +72,6 @@ IMAGE_INSTALL += " \
     ${KERNEL_EXTRA_INSTALL} \
     ${DEV_SDK_INSTALL} \
     ${DEV_EXTRA_TOOLS_INSTALL} \
+    ${OPENCV_DEV} \
  "
 
