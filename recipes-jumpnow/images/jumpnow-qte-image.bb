@@ -15,6 +15,11 @@ TS_TOOLS = " \
     tslib-conf \
  " 
 
+OPENCV_DEV = " \
+    opencv-dev \
+    opencv-samples-dev \
+ "
+
 KERNEL_MODULES_TOUCHSCREEN = " \
     kernel-module-ads7846 \
  "
@@ -22,6 +27,7 @@ KERNEL_MODULES_TOUCHSCREEN = " \
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
     ${TS_TOOLS} \
+    ${OPENCV_DEV} \
     ${KERNEL_MODULES_TOUCHSCREEN} \
  "
 

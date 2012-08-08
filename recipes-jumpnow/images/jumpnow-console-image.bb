@@ -62,16 +62,10 @@ DEV_EXTRA_TOOLS_INSTALL = " \
     systemd-analyze \
  "
 
-OPENCV_DEV = " \
-    opencv-dev \
-    opencv-samples-dev \
- "
-
 IMAGE_INSTALL += " \	
     ${BASE_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
     ${DEV_SDK_INSTALL} \
     ${DEV_EXTRA_TOOLS_INSTALL} \
-    ${OPENCV_DEV} \
  "
 
