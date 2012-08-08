@@ -28,10 +28,8 @@ if [ -b $DEV ]; then
 	sudo mount $DEV /media/card
 
 	echo "Untar'ing rootfs to /media/card"
-#	sudo tar -C /media/card -xvjf core-image-minimal-overo.tar.bz2
 #	sudo tar -C /media/card -xvjf jumpnow-console-image-overo.tar.bz2
-#	sudo tar -C /media/card -xvjf jumpnow-qt-console-image-overo.tar.bz2
-	sudo tar -C /media/card -xvjf jumpnow-qte-console-image-overo.tar.bz2
+	sudo tar -C /media/card -xvjf jumpnow-qte-image-overo.tar.bz2
 
 	echo "Syncing disk"
 	sync
