@@ -55,6 +55,8 @@ EXTRA_TOOLS_INSTALL = " \
     systemd-analyze \
     tcpdump \
     vim-tiny \
+    media-ctl \
+    yavta \
  "
 
 PYTHON_EXTRA = " \
