@@ -3,17 +3,17 @@ This layer depends on:
 URI: git://git.yoctoproject.org/poky.git
 branch: denzil
 revision: HEAD
-commit: 73cdebf
+commit: 65ffa73
 
 URI: git://git.openembedded.org/meta-openembedded
 branch: denzil
 revision: HEAD
-commit: 568b986
+commit: 6e43477
 
 URI: git://www.sakoman.com/git/meta-sakoman
 branch: master
 revision: HEAD
-commit: 673fddb
+commit: 3761348
 
 meta-jumpnow layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
