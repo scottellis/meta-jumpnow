@@ -1,4 +1,4 @@
-# 
+# Add opencv and qte to the console image 
 
 require jumpnow-console-image.bb
 
@@ -20,14 +20,10 @@ OPENCV_DEV = " \
     opencv-samples-dev \
  "
 
-KERNEL_MODULES_TOUCHSCREEN = " \
-    kernel-module-ads7846 \
- "
-
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
     ${TS_TOOLS} \
     ${OPENCV_DEV} \
-    ${KERNEL_MODULES_TOUCHSCREEN} \
+    psplash \
  "
 
