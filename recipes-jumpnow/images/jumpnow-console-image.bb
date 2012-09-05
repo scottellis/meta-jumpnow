@@ -14,6 +14,7 @@ BASE_INSTALL = " \
 KERNEL_MODULES_OOT = " \
     pwm-module \
     mux-module \
+    irqlat-module \
  "
 
 KERNEL_EXTRA_INSTALL = " \
