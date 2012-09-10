@@ -53,6 +53,7 @@ EXTRA_TOOLS_INSTALL = " \
     devmem2 \
     git \
     iperf \
+    nano \
     systemd-analyze \
     tcpdump \
     vim-tiny \
