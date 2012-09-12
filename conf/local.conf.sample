@@ -1,0 +1,31 @@
+# Sample configuration for using the meta-jumpnow layer
+
+PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
+PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
+
+BB_NUMBER_THREADS = "4"
+PARALLEL_MAKE = "-j 4"
+
+MACHINE ?= "overo"
+
+DL_DIR ?= "/oe-sources"
+
+# [denzil] - meta-jumpnow, hard-fp 
+TMPDIR = "/oe3"
+
+DISTRO ?= "poky"
+
+PACKAGE_CLASSES ?= "package_ipk"
+
+# Supported values are i686 and x86_64
+SDKMACHINE ?= "x86_64"
+
+EXTRA_IMAGE_FEATURES = "debug-tweaks package-management"
+
+#USER_CLASSES ?= "buildstats image-mklibs image-prelink"
+USER_CLASSES ?= "image-mklibs image-prelink"
+
+PATCHRESOLVE = "noop"
+
+CONF_VERSION = "1"
+

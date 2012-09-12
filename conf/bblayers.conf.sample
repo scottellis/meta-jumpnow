@@ -1,0 +1,12 @@
+# LAYER_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+LCONF_VERSION = "4"
+
+BBFILES ?= ""
+BBLAYERS ?= " \
+  /home/scott/poky/meta \
+  /home/scott/poky/meta-yocto \
+  /home/scott/poky/meta-openembedded/meta-oe \
+  /home/scott/poky/meta-sakoman \
+  /home/scott/poky/meta-jumpnow \
+ "
