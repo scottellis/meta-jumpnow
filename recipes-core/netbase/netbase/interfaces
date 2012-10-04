@@ -6,9 +6,14 @@ iface lo inet loopback
 auto eth0
 iface eth0 inet dhcp 
 
-# Local tide.jumpnow address
 #iface eth0 inet static
 #	address 192.168.10.12
 #	netmask 255.255.255.0
 #	broadcast 192.168.10.255
 #	gateway 192.168.10.1
+
+# WPA wireless example, run manually with: ifup wlan0
+iface wlan0 inet dhcp
+     pre-up wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -B
+     down killall wpa_supplicant
+
