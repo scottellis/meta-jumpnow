@@ -20,10 +20,15 @@ OPENCV_DEV = " \
     opencv-samples-dev \
  "
 
+DEMOS = " \
+    sample-qt \
+ "
+
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
     ${TS_TOOLS} \
     ${OPENCV_DEV} \
+    ${DEMOS} \
     psplash \
  "
 
