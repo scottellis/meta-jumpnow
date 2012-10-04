@@ -26,7 +26,6 @@ WIFI_SUPPORT = " \
     linux-firmware-sd8686 \
     iw \
     wpa-supplicant \
-    rfkill \
  "
 
 DEV_SDK_INSTALL = " \
