@@ -15,7 +15,7 @@ This layer depends on:
         revision: HEAD
         commit: 188bdca
 
-meta-jumpnow layer maintainer: Scott Ellis <scott@jumpnowtek.com>
+        meta-jumpnow layer maintainer: Scott Ellis <scott@pansenti.com>
 
 Some notes for setting up and using this repository can be found here 
 
