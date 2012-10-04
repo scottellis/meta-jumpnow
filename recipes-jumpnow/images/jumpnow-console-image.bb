@@ -55,6 +55,7 @@ EXTRA_TOOLS_INSTALL = " \
     iperf \
     nano \
     systemd-analyze \
+    sysfsutils \
     tcpdump \
     vim-tiny \
     media-ctl \
