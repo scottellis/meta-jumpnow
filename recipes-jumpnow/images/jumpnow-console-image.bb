@@ -65,6 +65,10 @@ PYTHON_EXTRA = " \
     python-pyserial \
  "
 
+MISC_EXTRA = " \
+    polladc \
+ "
+
 IMAGE_INSTALL += " \	
     ${BASE_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
@@ -72,6 +76,7 @@ IMAGE_INSTALL += " \
     ${EXTRA_TOOLS_INSTALL} \
     ${WIFI_SUPPORT} \
     ${PYTHON_EXTRA} \
+    ${MISC_EXTRA} \
  "
 
 
