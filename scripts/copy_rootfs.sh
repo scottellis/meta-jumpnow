@@ -31,9 +31,6 @@ if [ -b $DEV ]; then
 #	sudo tar -C /media/card -xjf jumpnow-console-image-overo.tar.bz2
 	sudo tar -C /media/card -xjf jumpnow-qte-image-overo.tar.bz2
 
-	echo "Syncing disk"
-	sync
-
 	echo "Umounting $DEV"
 	sudo umount $DEV
 else

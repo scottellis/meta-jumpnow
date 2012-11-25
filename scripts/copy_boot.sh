@@ -46,9 +46,6 @@ if [ -b $DEV ]; then
 	echo "Copying uImage"
 	sudo cp uImage-overo.bin /media/card/uImage
 
-	echo "Syncing writes"
-	sync
-
 	echo "Unmounting ${DEV}"
 	sudo umount ${DEV}
 else
