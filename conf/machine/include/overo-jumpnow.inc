@@ -1,7 +1,7 @@
 SOC_FAMILY = "omap3"
 TARGET_ARCH = "arm"
 
-DEFAULTTUNE ?= "cortexa8hf-neon"
+#DEFAULTTUNE ?= "cortexa8hf-neon"
 
 require conf/machine/include/tune-cortexa8.inc
 

@@ -7,6 +7,5 @@ BBLAYERS ?= " \
   /home/scott/poky/meta \
   /home/scott/poky/meta-yocto \
   /home/scott/poky/meta-openembedded/meta-oe \
-  /home/scott/poky/meta-sakoman \
-  /home/scott/poky/meta-jumpnow \
+  /home/scott/jumpnow/meta-jumpnow \
  "

@@ -3,24 +3,24 @@
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
 
-BB_NUMBER_THREADS = "4"
-PARALLEL_MAKE = "-j 4"
+BB_NUMBER_THREADS = "6"
+PARALLEL_MAKE = "-j 6"
 
 MACHINE ?= "overo"
 
 DL_DIR ?= "/oe-sources"
 
 # [denzil] - meta-jumpnow, hard-fp 
-TMPDIR = "/oe3"
+TMPDIR = "/oe1"
 
 DISTRO ?= "poky"
 
-PACKAGE_CLASSES ?= "package_ipk"
+PACKAGE_CLASSES ?= "package_rpm"
 
 # Supported values are i686 and x86_64
 SDKMACHINE ?= "x86_64"
 
-EXTRA_IMAGE_FEATURES = "debug-tweaks package-management"
+#EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 #USER_CLASSES ?= "buildstats image-mklibs image-prelink"
 USER_CLASSES ?= "image-mklibs image-prelink"

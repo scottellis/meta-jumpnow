@@ -1,13 +1,20 @@
 # A console development image with some C/C++ dev tools
 
-require recipes-core/images/core-image-minimal.bb
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=3f40d7994397109285ec7b81fdeb3b58"
+
+inherit image
+
+IMAGE_FEATURES += "package-management"
 
 BASE_INSTALL = " \
     coreutils \
-    less \
+    dbus \
     findutils \
-    systemd \
-    task-core-ssh-openssh \
+    ifupdown \
+    less \
+    openssh-ssh openssh-keygen openssh-scp openssh-sshd-systemd \
+    systemd systemd-compat-units \
  "
 
 # Custom kernel modules built out of tree
@@ -70,6 +77,8 @@ MISC_EXTRA = " \
  "
 
 IMAGE_INSTALL += " \	
+    task-core-boot \
+    ${ROOTFS_PKGMANAGE} \
     ${BASE_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
     ${DEV_SDK_INSTALL} \
@@ -84,9 +93,12 @@ IMAGE_INSTALL += " \
 # for packages installed above
 IMAGE_FILE_BLACKLIST += " \
                         /etc/init.d/avahi-daemon \
+                        /etc/init.d/bootmisc.sh \
                         /etc/init.d/dbus-1 \
                         /etc/init.d/mountnfs.sh \
                         /etc/init.d/umountnfs.sh \
+                        /etc/init.d/udev \
+                        /etc/init.d/udev-cache \
                        "
 
 remove_blacklist_files() {
