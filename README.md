@@ -24,7 +24,8 @@ Bugs:
 run this
 
         root@duovero:~# rm /lib/systemd/system/basic.target.wants/console-kit*
-        root@duovero:~# rm /lib/systemd/system/reboot.target.wants/console-kit*
         root@duovero:~# rm /lib/systemd/system/halt.target.wants/console-kit*
         root@duovero:~# rm /lib/systemd/system/kexec.target.wants/console-kit*
+        root@duovero:~# rm /lib/systemd/system/poweroff.target.wants/console-kit*
+        root@duovero:~# rm /lib/systemd/system/reboot.target.wants/console-kit*
 
