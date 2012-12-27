@@ -59,6 +59,7 @@ EXTRA_TOOLS_INSTALL = " \
     devmem2 \
     git \
     iperf \
+    minicom \
     nano \
     systemd-analyze \
     sysfsutils \
@@ -89,8 +90,8 @@ IMAGE_INSTALL += " \
  "
 
 
-# this section removes remnants of legacy sysvinit support
-# for packages installed above
+# this section removes remnants of legacy sysvinit support for packages
+# installed above and some systemd scripts that aren't needed
 IMAGE_FILE_BLACKLIST += " \
                         /etc/init.d/avahi-daemon \
                         /etc/init.d/bootmisc.sh \
@@ -99,6 +100,11 @@ IMAGE_FILE_BLACKLIST += " \
                         /etc/init.d/umountnfs.sh \
                         /etc/init.d/udev \
                         /etc/init.d/udev-cache \
+                        /lib/systemd/system/basic.target.wants/console-kit-log* \
+                        /lib/systemd/system/halt.target.wants/console-kit-log* \
+                        /lib/systemd/system/kexec.target.wants/console-kit-log* \
+                        /lib/systemd/system/poweroff.target.wants/console-kit-log* \
+                        /lib/systemd/system/reboot.target.wants/console-kit-log* \
                        "
 
 remove_blacklist_files() {
