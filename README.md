@@ -3,12 +3,12 @@ This layer depends on:
         URI: git://git.yoctoproject.org/poky.git
         branch: denzil
         revision: HEAD
-        commit: ef745cb 
+        commit: 3456295
 
         URI: git://git.openembedded.org/meta-openembedded
         branch: denzil
         revision: HEAD
-        commit: e77646b
+        commit: c0117f5
 
         meta-jumpnow layer maintainer: Scott Ellis <scott@pansenti.com>
 

@@ -2,6 +2,7 @@
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
+PREFERRED_PROVIDER_udev = "udev"
 
 BB_NUMBER_THREADS = "6"
 PARALLEL_MAKE = "-j 6"
