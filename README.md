@@ -3,7 +3,7 @@ This layer depends on:
         URI: git://git.yoctoproject.org/poky.git
         branch: denzil
         revision: HEAD
-        commit: 3456295
+        commit: 6caa7d1
 
         URI: git://git.openembedded.org/meta-openembedded
         branch: denzil
