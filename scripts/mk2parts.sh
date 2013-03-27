@@ -39,7 +39,7 @@ SIZE=`fdisk -l $DRIVE | grep "Disk $DRIVE" | cut -d' ' -f5`
 
 echo DISK SIZE – $SIZE bytes
 
-if [ "$SIZE" -lt 2000000000 ]; then
+if [ "$SIZE" -lt 1800000000 ]; then
 	echo "Require an SD card of at least 2GB"
 	exit 1
 fi
