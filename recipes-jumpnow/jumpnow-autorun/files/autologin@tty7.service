@@ -1,0 +1,30 @@
+# Launch a root session on the /dev/tty7
+# If you put something in the .profile of /home/root, it will get 
+# run automatically.
+
+[Unit]
+Description=Autologin service on %I
+BindTo=dev-%i.device
+After=dev-%i.device systemd-user-sessions.service
+
+# If additional gettys are spawned during boot then we should make
+# sure that this is synchronized before getty.target, even though
+# getty.target didn't actually pull it in.
+Before=getty.target
+
+[Service]
+Environment=TERM=vt100
+ExecStart=-/sbin/agetty --noclear -a root -s %I 115200
+Restart=none
+RestartSec=0
+UtmpIdentifier=%I
+TTYPath=/dev/%I
+TTYReset=yes
+TTYVHangup=yes
+KillMode=process
+IgnoreSIGPIPE=no
+
+# Some login implementations ignore SIGTERM, so we send SIGHUP
+# instead, to ensure that login terminates cleanly.
+KillSignal=SIGHUP
+

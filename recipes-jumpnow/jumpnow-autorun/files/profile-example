@@ -1,0 +1,14 @@
+#!/bin/sh
+
+RUNNING=`ps | grep tstap | grep -v grep | wc -l`
+
+if [ "$RUNNING" -eq 0 ]; then
+	if [ ! -f /etc/pointercal ]; then
+		/usr/bin/ts_calibrate
+	fi
+
+	if [ -f /usr/bin/tstap ]; then
+		/usr/bin/tstap -qws &
+	fi
+fi
+
