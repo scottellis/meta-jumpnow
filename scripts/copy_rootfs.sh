@@ -29,7 +29,10 @@ if [ -b $DEV ]; then
 
 	echo "Untar'ing rootfs to /media/card"
 #	sudo tar -C /media/card -xjf jumpnow-console-image-overo.tar.bz2
-	sudo tar -C /media/card -xjf jumpnow-qte-image-overo.tar.bz2
+#	sudo tar -C /media/card -xjf jumpnow-qte-image-overo.tar.bz2
+#	sudo tar -C /media/card -xjf jumpnow-boot-image-overo.tar.bz2
+#	sudo tar -C /media/card -xjf jumpnow-imu-console-image-overo.tar.bz2
+	sudo tar -C /media/card -xjf jumpnow-imu-qte-image-overo.tar.bz2
 
 	echo "Umounting $DEV"
 	sudo umount $DEV
