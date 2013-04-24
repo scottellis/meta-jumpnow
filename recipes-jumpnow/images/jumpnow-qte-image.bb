@@ -15,10 +15,10 @@ TS_TOOLS = " \
     tslib-conf \
  " 
 
-#OPENCV_DEV = " \
-#    opencv-dev \
-#    opencv-samples-dev \
-# "
+OPENCV_DEV = " \
+    opencv-dev \
+    opencv-samples-dev \
+ "
 
 DEMOS = " \
     sample-qt \
@@ -26,6 +26,7 @@ DEMOS = " \
 
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
+    ${OPENCV_DEV} \
     ${TS_TOOLS} \
     ${DEMOS} \
     psplash \
