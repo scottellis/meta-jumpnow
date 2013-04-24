@@ -11,19 +11,16 @@ MACHINE ?= "overo"
 
 DL_DIR ?= "/oe-sources"
 
-# [denzil] - meta-jumpnow, hard-fp 
-TMPDIR = "/oe1"
+# [denzil] - meta-jumpnow, soft-fp 
+TMPDIR = "/oe7"
 
 DISTRO ?= "poky"
 
-PACKAGE_CLASSES ?= "package_rpm"
+PACKAGE_CLASSES ?= "package_ipk"
 
 # Supported values are i686 and x86_64
 SDKMACHINE ?= "x86_64"
 
-#EXTRA_IMAGE_FEATURES = "debug-tweaks"
-
-#USER_CLASSES ?= "buildstats image-mklibs image-prelink"
 USER_CLASSES ?= "image-mklibs image-prelink"
 
 PATCHRESOLVE = "noop"
