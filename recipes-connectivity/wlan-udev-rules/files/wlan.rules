@@ -1,0 +1,2 @@
+KERNEL=="wlan0", ACTION=="add" RUN+="/etc/udev/scripts/wlan.sh"
+KERNEL=="wlan0", ACTION=="remove" RUN+="/etc/udev/scripts/wlan.sh" 
