@@ -9,9 +9,7 @@ ARM_INSTRUCTION_SET = "arm"
 
 DEPENDS = "v4l-utils libtool jpeg bzip2 zlib libpng tiff glib-2.0"
 
-#SRC_URI = "${SOURCEFORGE_MIRROR}/project/opencvlibrary/opencv-unix/2.4.5/opencv-2.4.5.tar.gz"
-SRC_URI = "${SOURCEFORGE_MIRROR}/projects/opencvlibrary/files/opencv-unix/${PV}/opencv-${PV}.tar.gz"
-
+SRC_URI = "http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/${PV}/opencv-${PV}.tar.gz"
 SRC_URI[md5sum] = "8eac87462c7bec8b89021b723207c623"
 SRC_URI[sha256sum] = "d30beecf4b57977fbd1635af54c5ab3fc00113e9e59a9d58081732260fe06292"
 
