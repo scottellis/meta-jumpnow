@@ -1,11 +1,17 @@
 # LAYER_CONF_VERSION is increased each time build/conf/bblayers.conf
 # changes incompatibly
-LCONF_VERSION = "4"
+LCONF_VERSION = "6"
 
+BBPATH = "${TOPDIR}"
 BBFILES ?= ""
+
 BBLAYERS ?= " \
-  /home/scott/poky/meta \
-  /home/scott/poky/meta-yocto \
-  /home/scott/poky/meta-openembedded/meta-oe \
-  /home/scott/jumpnow/meta-jumpnow \
- "
+  /home/scott/poky-dylan/meta \
+  /home/scott/poky-dylan/meta-yocto \
+  /home/scott/jumpnow-dylan/meta-jumpnow \
+  "
+
+BBLAYERS_NON_REMOVABLE ?= " \
+  /home/scott/poky-dylan/meta \
+  /home/scott/poky-dylan/meta-yocto \
+  "

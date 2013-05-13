@@ -1,4 +1,4 @@
-# Add opencv and qte to the console image 
+# A dev image with Qt embedded, touchscreen library (and OpenCV coming) 
 
 require jumpnow-console-image.bb
 
@@ -15,20 +15,19 @@ TS_TOOLS = " \
     tslib-conf \
  " 
 
-OPENCV_DEV = " \
-    opencv-dev \
-    opencv-samples-dev \
- "
+#OPENCV_DEV = "
+#    opencv-dev
+#    opencv-samples-dev
+# "
 
-DEMOS = " \
-    sample-qt \
- "
+#DEMOS = "
+#    sample-qt
+# "
 
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
-    ${OPENCV_DEV} \
     ${TS_TOOLS} \
-    ${DEMOS} \
-    psplash \
  "
+
+export IMAGE_BASENAME = "jumpnow-qte-image"
 
