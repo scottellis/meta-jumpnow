@@ -20,13 +20,12 @@ KERNEL_EXTRA_INSTALL = " \
 
 WIFI_SUPPORT = " \
     linux-firmware-sd8686 \
+    linux-firmware-rtl8192ce \
+    linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
     linux-firmware-wl12xx \
     wpa-supplicant \
  "
-
-#    linux-firmware-rtl8192cu
-#    linux-firmware-rtl8192ce
 
 DEV_SDK_INSTALL = " \
     binutils \
