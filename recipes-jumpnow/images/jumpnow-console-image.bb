@@ -35,6 +35,7 @@ WIFI_SUPPORT_overo += " \
 DEV_SDK_INSTALL = " \
     binutils \
     binutils-symlinks \
+    coreutils \
     cpp \
     cpp-symlinks \
     diffutils \
