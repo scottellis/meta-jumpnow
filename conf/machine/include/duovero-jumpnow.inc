@@ -3,7 +3,7 @@ require conf/machine/include/soc-family.inc
 
 TARGET_ARCH = "arm"
 
-DEFAULTTUNE ?= "cortexa9hf-neon"
+#DEFAULTTUNE ?= "cortexa9hf-neon"
 
 #change below to a9 if you are building omap4 only images
 require conf/machine/include/tune-cortexa9.inc
