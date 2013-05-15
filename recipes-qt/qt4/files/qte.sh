@@ -1,20 +1,18 @@
 #!/bin/sh
 
-if [ -e /dev/input/touchscreen0 ]
-then
-    QWS_MOUSE_PROTO=Tslib:/dev/input/touchscreen0
-    export QWS_MOUSE_PROTO
+if [ -e /dev/input/touchscreen0 ]; then
+    export QWS_MOUSE_PROTO=Tslib:/dev/input/touchscreen0
 fi
 
-QWS_SIZE=480x272
-export QWS_SIZE
+# defaults for the Overo lcd43 touchscreen
+# export QWS_SIZE=480x272
+# export QWS_DISPLAY="linuxfb:mmHeight=53:mmWidth=95"
 
-QWS_DISPLAY="linuxfb:mmHeight=53:mmWidth=95"
-export QWS_DISPLAY
+# defaults for a HDMI 1080p system, like the ST1080 goggles with duovero
+# export QWS_SIZE=1920x1080
 
-# For development convenience, can remove later for production
-if [ -e /usr/share/qtopia/environment-setup ]
-then
+# for native development convenience
+if [ -e /usr/share/qtopia/environment-setup ]; then
     source /usr/share/qtopia/environment-setup
 fi
 
