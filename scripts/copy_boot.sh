@@ -18,6 +18,13 @@ else
 	fi
 fi 
 
+if [[ -z "${MACHINE}" ]]; then
+	echo "Environment variable MACHINE not found!"
+	echo "Example: export MACHINE=overo or export MACHINE=duovero"
+	exit 1
+else
+	echo "Using MACHINE $MACHINE"
+fi
 
 DEV=/dev/${1}1
 
@@ -44,7 +51,7 @@ if [ -b $DEV ]; then
 	fi
 
 	echo "Copying uImage"
-	sudo cp uImage-overo.bin /media/card/uImage
+	sudo cp uImage-${MACHINE}.bin /media/card/uImage
 
 	echo "Unmounting ${DEV}"
 	sudo umount ${DEV}

@@ -18,6 +18,14 @@ else
 	fi
 fi 
 
+if [[ -z "${MACHINE}" ]]; then
+	echo "Environment variable MACHINE not found!"
+	echo "Example: export MACHINE=overo or export MACHINE=duovero"
+	exit 1
+else
+	echo "Using MACHINE $MACHINE"
+fi
+
 DEV=/dev/${1}2
 
 if [ -b $DEV ]; then
@@ -28,9 +36,9 @@ if [ -b $DEV ]; then
 	sudo mount $DEV /media/card
 
 	echo "Untar'ing rootfs to /media/card"
-#	sudo tar -C /media/card -xjf jumpnow-boot-image-overo.tar.bz2
-#	sudo tar -C /media/card -xjf jumpnow-console-image-overo.tar.bz2
-	sudo tar -C /media/card -xjf jumpnow-qte-image-overo.tar.bz2
+#	sudo tar -C /media/card -xjf jumpnow-boot-image-${MACHINE}.tar.bz2
+#	sudo tar -C /media/card -xjf jumpnow-console-image-${MACHINE}.tar.bz2
+	sudo tar -C /media/card -xjf jumpnow-qte-image-${MACHINE}.tar.bz2
 
 	echo "Umounting $DEV"
 	sudo umount $DEV
