@@ -19,12 +19,17 @@ QT_TOOLS_overo = " \
 #    opencv-samples-dev
 # "
 
-#DEMOS = "
-#    sample-qt
-# "
+DEMOS = ""
+
+# Qt app to toggle some board leds on the Gumstix Overo
+DEMOS_overo += " \
+    sample-qt \
+ "
 
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
+    ${DEMOS} \
+    psplash \
  "
 
 export IMAGE_BASENAME = "jumpnow-qte-image"
