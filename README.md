@@ -3,7 +3,7 @@ This layer depends on:
         URI: git://git.yoctoproject.org/poky.git
         branch: dylan
         revision: HEAD
-        commit: 789b2b7
+        commit: c3cb650
 
         meta-jumpnow layer maintainer: Scott Ellis <scott@pansenti.com>
 
