@@ -1,15 +1,14 @@
-# A dev image with Qt embedded, touchscreen library (and OpenCV coming) 
+# A dev image with Qt embedded, touchscreen library for Overo (and OpenCV coming) 
 
 require jumpnow-console-image.bb
-
 
 QT_TOOLS = " \
     qt4-embedded-dev\
     qt4-embedded \
-    qt4-embedded-plugin-mousedriver-tslib \
  "
 
-TS_TOOLS = " \
+QT_TOOLS_overo = " \
+    qt4-embedded-plugin-mousedriver-tslib \
     tslib-calibrate \
     tslib-tests \
     tslib-conf \
@@ -26,7 +25,6 @@ TS_TOOLS = " \
 
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
-    ${TS_TOOLS} \
  "
 
 export IMAGE_BASENAME = "jumpnow-qte-image"

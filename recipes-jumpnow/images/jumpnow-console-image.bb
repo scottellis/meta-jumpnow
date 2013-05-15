@@ -7,7 +7,9 @@ CORE_TOOLS = " \
  "
 
 # Custom kernel modules built out of tree
-KERNEL_MODULES_OOT = " \
+KERNEL_MODULES_OOT = ""
+
+KERNEL_MODULES_OOT_overo = " \
     pwm-module \
     mux-module \
     irqlat-module \
@@ -19,12 +21,15 @@ KERNEL_EXTRA_INSTALL = " \
  "
 
 WIFI_SUPPORT = " \
-    linux-firmware-sd8686 \
     linux-firmware-rtl8192ce \
     linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
     linux-firmware-wl12xx \
     wpa-supplicant \
+ "
+
+WIFI_SUPPORT_overo += " \
+    linux-firmware-sd8686 \
  "
 
 DEV_SDK_INSTALL = " \
@@ -51,11 +56,6 @@ EXTRA_TOOLS_INSTALL = " \
     ethtool \
     git \
     sysfsutils \
- "
-
-PYTHON_EXTRA = " \
-    python-fcntl \
-    python-pyserial \
  "
 
 MISC_EXTRA = " \
