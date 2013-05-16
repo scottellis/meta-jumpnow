@@ -3,12 +3,9 @@
 # Yocto Project 1.4 Poky distribution 9.0, [dylan] branch
 
 # From [denzil] branch, until I decide whether to bring in meta-openembedded
-BBMASK = "meta-jumpnow/recipes-connectivity"
-BBMASK .= "|meta-jumpnow/recipes-graphics"
-BBMASK .= "|meta-jumpnow/recipes-qt"
-BBMASK .= "|meta-jumpnow/recipes-core"
-BBMASK .= "|meta-jumpnow/recipes-misc"
+BBMASK = "meta-jumpnow/recipes-graphics"
 BBMASK .= "|meta-jumpnow/recipes-support"
+BBMASK .= "|meta-beagleboard"
 
 # This is sufficient for most of my Gumstix projects
 DISTRO_FEATURES = "alsa ext2 keyboard serial usbgadget usbhost wifi bluetooth directfb ${DISTRO_FEATURES_LIBC}"
@@ -20,12 +17,13 @@ BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
 
 MACHINE = "overo"
+#MACHINE = "duovero"
 
 DL_DIR ?= "/oe-sources"
 
 #SSTATE_DIR ?= "${TOPDIR}/sstate-cache"
 
-TMPDIR = "/oe9/tmp-poky-dylan-build"
+TMPDIR = "/oe16/tmp-poky-dylan-build"
 
 DISTRO = "poky"
 
