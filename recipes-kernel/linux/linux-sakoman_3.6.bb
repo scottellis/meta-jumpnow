@@ -12,4 +12,5 @@ S = "${WORKDIR}/git"
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://www.sakoman.com/git/linux.git;branch=omap-3.6;protocol=git \
 	   file://defconfig \
+           file://smsc911x-busy-wait.patch \
           "
