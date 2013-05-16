@@ -10,9 +10,11 @@ CORE_TOOLS = " \
 KERNEL_MODULES_OOT = ""
 
 KERNEL_MODULES_OOT_overo = " \
-    pwm-module \
-    mux-module \
-    irqlat-module \
+    omap3-pwm \
+    omap3-mux \
+    omap3-irqlat \
+    hrt-test \
+    udelay-test \
  "
 
 KERNEL_EXTRA_INSTALL = " \
