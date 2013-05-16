@@ -5,10 +5,16 @@ if [ "x${1}" = "x" ]; then
 	exit 0
 fi
 
+if [ "x${2}" = "x" ]; then
+    IMAGE=qte
+else
+    IMAGE=${2}
+fi
+
 if [[ -z "${OETMP}" ]]; then
 	echo "Working from local directory"
 else
-	echo "Using OETMP $OETMP"
+	echo "Using OETMP: $OETMP"
 
 	if [ -d ${OETMP}/deploy/images ]; then
 		cd ${OETMP}/deploy/images
@@ -23,8 +29,20 @@ if [[ -z "${MACHINE}" ]]; then
 	echo "Example: export MACHINE=overo or export MACHINE=duovero"
 	exit 1
 else
-	echo "Using MACHINE $MACHINE"
+	echo "Using MACHINE: $MACHINE"
 fi
+
+if [ ! -f "jumpnow-${IMAGE}-image-${MACHINE}.tar.bz2" ]; then
+    echo "Root filesystem not found: jumpnow-${IMAGE}-image-${MACHINE}.tar.bz2"
+
+    if [[ ! -z "${OETMP}" ]]; then
+        cd $OLDPWD
+    fi
+
+    exit 1
+fi
+
+echo -e "Using IMAGE: $IMAGE\n"
 
 DEV=/dev/${1}2
 
@@ -36,9 +54,7 @@ if [ -b $DEV ]; then
 	sudo mount $DEV /media/card
 
 	echo "Untar'ing rootfs to /media/card"
-#	sudo tar -C /media/card -xjf jumpnow-boot-image-${MACHINE}.tar.bz2
-#	sudo tar -C /media/card -xjf jumpnow-console-image-${MACHINE}.tar.bz2
-	sudo tar -C /media/card -xjf jumpnow-qte-image-${MACHINE}.tar.bz2
+	sudo tar -C /media/card -xjf jumpnow-${IMAGE}-image-${MACHINE}.tar.bz2
 
 	echo "Umounting $DEV"
 	sudo umount $DEV

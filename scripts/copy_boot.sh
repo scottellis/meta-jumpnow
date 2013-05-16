@@ -36,9 +36,9 @@ if [ -b $DEV ]; then
 	sudo mount ${DEV} /media/card
 
 	echo "Copying MLO"
-	sudo cp MLO /media/card/MLO
+	sudo cp MLO-${MACHINE} /media/card/MLO
 	echo "Copying u-boot"
-	sudo cp u-boot.img /media/card/u-boot.img
+	sudo cp u-boot-${MACHINE}.img /media/card/u-boot.img
 
 	if [ -f boot.scr ]; then
 		echo "Copying boot.scr"
