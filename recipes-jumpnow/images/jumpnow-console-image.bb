@@ -28,8 +28,12 @@ WIFI_SUPPORT = " \
     wpa-supplicant \
  "
 
-WIFI_SUPPORT_overo += " \
+WIFI_SUPPORT_overo = " \
     linux-firmware-sd8686 \
+    linux-firmware-rtl8192ce \
+    linux-firmware-rtl8192cu \
+    linux-firmware-wl12xx \
+    wpa-supplicant \
  "
 
 DEV_SDK_INSTALL = " \
@@ -45,6 +49,7 @@ DEV_SDK_INSTALL = " \
     g++ \
     g++-symlinks \
     gettext \
+    git \
     ldd \
     libstdc++ \
     libstdc++-dev \
@@ -55,19 +60,21 @@ DEV_SDK_INSTALL = " \
 
 EXTRA_TOOLS_INSTALL = " \
     ethtool \
-    git \
     sysfsutils \
  "
 
-MISC_EXTRA = " \
+MISC_EXTRA = ""
+
+MISC_EXTRA_overo = " \
     polladc \
  "
 
 IMAGE_INSTALL += " \
     ${CORE_TOOLS} \
-    ${KERNEL_EXTRA_INSTALL} \
     ${DEV_SDK_INSTALL} \
     ${EXTRA_TOOLS_INSTALL} \
+    ${KERNEL_EXTRA_INSTALL} \
+    ${MISC_EXTRA} \
     ${WIFI_SUPPORT} \
  "
 
