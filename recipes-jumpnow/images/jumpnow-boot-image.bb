@@ -11,5 +11,11 @@ IMAGE_INSTALL += " \
     ${ROOTFS_PKGMANAGE_BOOTSTRAP} \
  "
 
+disable_bootlogd() {
+    echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
+}
+
+ROOTFS_POSTPROCESS_COMMAND += "disable_bootlogd ; "
+
 export IMAGE_BASENAME = "jumpnow-boot-image"
 
