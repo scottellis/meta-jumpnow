@@ -1,0 +1,87 @@
+diff --git git/drivers/mfd/omap-usb-host.c git/drivers/mfd/omap-usb-host.c
+index 41088ec..d2387f8 100644
+--- git/drivers/mfd/omap-usb-host.c
++++ git/drivers/mfd/omap-usb-host.c
+@@ -742,34 +742,15 @@ static int __devinit usbhs_omap_probe(struct platform_device *pdev)
+ 		goto err_usbtll_p2_fck;
+ 	}
+ 
+-	if (is_ehci_phy_mode(pdata->port_mode[0])) {
+-		/* for OMAP3 , the clk set paretn fails */
+-		ret = clk_set_parent(omap->utmi_p1_fck,
+-					omap->xclk60mhsp1_ck);
+-		if (ret != 0)
+-			dev_err(dev, "xclk60mhsp1_ck set parent"
+-				"failed error:%d\n", ret);
+-	} else if (is_ehci_tll_mode(pdata->port_mode[0])) {
+-		ret = clk_set_parent(omap->utmi_p1_fck,
+-					omap->init_60m_fclk);
+-		if (ret != 0)
+-			dev_err(dev, "init_60m_fclk set parent"
+-				"failed error:%d\n", ret);
+-	}
+-
+-	if (is_ehci_phy_mode(pdata->port_mode[1])) {
+-		ret = clk_set_parent(omap->utmi_p2_fck,
+-					omap->xclk60mhsp2_ck);
+-		if (ret != 0)
+-			dev_err(dev, "xclk60mhsp2_ck set parent"
+-					"failed error:%d\n", ret);
+-	} else if (is_ehci_tll_mode(pdata->port_mode[1])) {
+-		ret = clk_set_parent(omap->utmi_p2_fck,
+-						omap->init_60m_fclk);
+-		if (ret != 0)
+-			dev_err(dev, "init_60m_fclk set parent"
+-				"failed error:%d\n", ret);
+-	}
++	if (is_ehci_phy_mode(pdata->port_mode[0]))
++		clk_set_parent(omap->utmi_p1_fck, omap->xclk60mhsp1_ck);
++	else if (is_ehci_tll_mode(pdata->port_mode[0]))
++		clk_set_parent(omap->utmi_p1_fck, omap->init_60m_fclk);
++
++	if (is_ehci_phy_mode(pdata->port_mode[1]))
++		clk_set_parent(omap->utmi_p2_fck, omap->xclk60mhsp2_ck);
++	else if (is_ehci_tll_mode(pdata->port_mode[1]))
++		clk_set_parent(omap->utmi_p2_fck, omap->init_60m_fclk);
+ 
+ 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "uhh");
+ 	if (!res) {
+diff --git git/drivers/usb/host/ehci-omap.c git/drivers/usb/host/ehci-omap.c
+index 0668418..de77d7f 100644
+--- git/drivers/usb/host/ehci-omap.c
++++ git/drivers/usb/host/ehci-omap.c
+@@ -86,30 +86,16 @@ static void omap_ehci_erratum_i693(struct ehci_hcd *ehci)
+ 	int ret = 0;
+ 
+ 	/* Switch to the internal 60 MHz clock */
+-	ret = clk_set_parent(utmi_p1_fck, init_60m_fclk);
+-	if (ret != 0)
+-		ehci_err(ehci, "init_60m_fclk set parent"
+-			"failed error:%d\n", ret);
+-
+-	ret = clk_set_parent(utmi_p2_fck, init_60m_fclk);
+-	if (ret != 0)
+-		ehci_err(ehci, "init_60m_fclk set parent"
+-			"failed error:%d\n", ret);
++	clk_set_parent(utmi_p1_fck, init_60m_fclk);
++	clk_set_parent(utmi_p2_fck, init_60m_fclk);
+ 
+ 	clk_enable(usbhost_p1_fck);
+ 	clk_enable(usbhost_p2_fck);
+ 
+ 	/* Wait 1ms and switch back to the external clock */
+ 	mdelay(1);
+-	ret = clk_set_parent(utmi_p1_fck, xclk60mhsp1_ck);
+-	if (ret != 0)
+-		ehci_err(ehci, "xclk60mhsp1_ck set parent"
+-			"failed error:%d\n", ret);
+-
+-	ret = clk_set_parent(utmi_p2_fck, xclk60mhsp2_ck);
+-	if (ret != 0)
+-		ehci_err(ehci, "xclk60mhsp2_ck set parent"
+-			"failed error:%d\n", ret);
++	clk_set_parent(utmi_p1_fck, xclk60mhsp1_ck);
++	clk_set_parent(utmi_p2_fck, xclk60mhsp2_ck);
+ 
+ 	clk_disable(usbhost_p1_fck);
+ 	clk_disable(usbhost_p2_fck);
