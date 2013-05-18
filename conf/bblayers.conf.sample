@@ -8,6 +8,7 @@ BBFILES ?= ""
 BBLAYERS ?= " \
   /home/scott/poky-dylan/meta \
   /home/scott/poky-dylan/meta-yocto \
+  /home/scott/jumpnow-dylan/meta-gumstix \
   /home/scott/jumpnow-dylan/meta-jumpnow \
   "
 

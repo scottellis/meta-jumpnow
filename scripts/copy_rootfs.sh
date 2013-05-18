@@ -32,8 +32,8 @@ else
 	echo "Using MACHINE: $MACHINE"
 fi
 
-if [ ! -f "jumpnow-${IMAGE}-image-${MACHINE}.tar.bz2" ]; then
-    echo "Root filesystem not found: jumpnow-${IMAGE}-image-${MACHINE}.tar.bz2"
+if [ ! -f "jumpnow-${IMAGE}-image-${MACHINE}.tar.xz" ]; then
+    echo "Root filesystem not found: jumpnow-${IMAGE}-image-${MACHINE}.tar.xz"
 
     if [[ ! -z "${OETMP}" ]]; then
         cd $OLDPWD
@@ -54,7 +54,7 @@ if [ -b $DEV ]; then
 	sudo mount $DEV /media/card
 
 	echo "Untar'ing rootfs to /media/card"
-	sudo tar -C /media/card -xjf jumpnow-${IMAGE}-image-${MACHINE}.tar.bz2
+	sudo tar -C /media/card -xJf jumpnow-${IMAGE}-image-${MACHINE}.tar.xz
 
 	echo "Umounting $DEV"
 	sudo umount $DEV

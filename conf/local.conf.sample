@@ -1,22 +1,29 @@
 # Local configuration for meta-jumpnow images
-# Used primarily for Gumstix Overo systems
+# Used primarily for Gumstix Overo and Duovero systems
 # Yocto Project 1.4 Poky distribution 9.0, [dylan] branch
 
 # From [denzil] branch, until I decide whether to bring in meta-openembedded
 BBMASK = "meta-jumpnow/recipes-graphics"
 BBMASK .= "|meta-jumpnow/recipes-support"
+# always only use our conf/machine configuration files
+BBMASK .= "|meta-gumstix/conf/machine"
+# just started with this, not working yet
 BBMASK .= "|meta-beagleboard"
 
-# This is sufficient for most of my Gumstix projects
+# This is sufficient for most of our Gumstix projects
 DISTRO_FEATURES = "alsa ext2 keyboard serial usbgadget usbhost wifi bluetooth directfb ${DISTRO_FEATURES_LIBC}"
 
 # Additional distro features you might want to add: 
 # 3g, irda, nfc, nfs, pci, vfat, x11, zeroconf 
 
+IMAGE_FSTYPES = "tar.xz"
+
 BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
 
 MACHINE = "overo"
+#PREFERRED_VERSION_linux-gumstix = "3.2"
+
 #MACHINE = "duovero"
 
 DL_DIR ?= "/oe-sources"
