@@ -39,14 +39,5 @@ IMAGE_INSTALL += " \
     ${SYNTRO} \
  "
 
-# qt brings in pulseaudio which brings in avahi which we don't 
-# normally use, so disable it
-
-disable_avahi() {
-    echo AVAHI_DAEMON_START=0 > ${IMAGE_ROOTFS}/etc/default/avahi-daemon
-}
-
-ROOTFS_POSTPROCESS_COMMAND += "disable_avahi ; "
-
 export IMAGE_BASENAME = "jumpnow-qte-image"
 
