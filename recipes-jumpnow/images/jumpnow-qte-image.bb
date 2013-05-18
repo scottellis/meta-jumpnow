@@ -18,15 +18,25 @@ QT_TOOLS_overo += " \
 
 DEMOS = ""
 
-# Qt app to toggle some board leds on the Gumstix Overo
-DEMOS_overo += " \
+DEMOS_overo = " \
     sample-qt \
  "
+
+SYNTRO = " \
+    syntrocore \
+    syntrocore-dev \
+    syntrov4lcamera \
+ "
+
+PSPLASH = ""
+
+PSPLASH_duovero = "psplash"
 
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
     ${DEMOS} \
-    psplash \
+    ${PSPLASH} \
+    ${SYNTRO} \
  "
 
 # qt brings in pulseaudio which brings in avahi which we don't 
