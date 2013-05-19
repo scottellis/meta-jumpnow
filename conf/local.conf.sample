@@ -4,7 +4,7 @@
 
 # From [denzil] branch, until I decide whether to bring in meta-openembedded
 BBMASK = "meta-jumpnow/recipes-graphics"
-BBMASK .= "|meta-jumpnow/recipes-support"
+BBMASK .= "|meta-jumpnow/recipes-support/opencv"
 # just started with this, not working yet
 BBMASK .= "|meta-beagleboard"
 
