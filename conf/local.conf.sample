@@ -5,26 +5,29 @@
 # From [denzil] branch, until I decide whether to bring in meta-openembedded
 BBMASK = "meta-jumpnow/recipes-graphics"
 BBMASK .= "|meta-jumpnow/recipes-support"
-# always only use our conf/machine configuration files
-BBMASK .= "|meta-gumstix/conf/machine"
 # just started with this, not working yet
 BBMASK .= "|meta-beagleboard"
 
-# This is sufficient for most of our Gumstix projects
-DISTRO_FEATURES = "alsa ext2 keyboard serial usbgadget usbhost wifi bluetooth directfb ${DISTRO_FEATURES_LIBC}"
+# This is sufficient for most of our projects
+DISTRO_FEATURES = "alsa directfb ext2 keyboard serial usbgadget usbhost wifi ${DISTRO_FEATURES_LIBC}"
 
 # Additional distro features you might want to add: 
-# 3g, irda, nfc, nfs, pci, vfat, x11, zeroconf 
+# 3g, bluetooth, irda, nfc, nfs, pci, vfat, x11, zeroconf 
 
-IMAGE_FSTYPES = "tar.xz"
+# force this output type for all MACHINES, significantly smaller in size
+IMAGE_FSTYPES_forcevariable = "tar.xz"
+
+# override the mix in the meta-gumstix/conf/machine configuration files
+MACHINE_FEATURES_forcevariable = "alsa ext3 kernel26 screen uboot usbgadget usbhost vfat"
 
 BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
 
-MACHINE = "overo"
+#MACHINE = "overo"
+# if mcbsp is required, have to use the 3.2 kernel
 #PREFERRED_VERSION_linux-gumstix = "3.2"
 
-#MACHINE = "duovero"
+MACHINE = "duovero"
 
 DL_DIR ?= "/oe-sources"
 
@@ -36,6 +39,7 @@ DISTRO = "poky"
 
 PACKAGE_CLASSES = "package_ipk"
 
+# i686 or x86_64
 SDKMACHINE = "x86_64"
 
 EXTRA_IMAGE_FEATURES = "debug-tweaks"
