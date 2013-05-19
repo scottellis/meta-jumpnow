@@ -16,26 +16,15 @@ QT_TOOLS_overo += " \
     tslib-conf \
  " 
 
-DEMOS = ""
-
-DEMOS_overo = " \
-    sample-qt \
- "
-
 SYNTRO = " \
     syntrocore \
     syntrocore-dev \
     syntrov4lcamera \
  "
 
-PSPLASH = ""
-
-PSPLASH_duovero = "psplash"
-
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
-    ${DEMOS} \
-    ${PSPLASH} \
+    psplash \
     ${SYNTRO} \
  "
 
