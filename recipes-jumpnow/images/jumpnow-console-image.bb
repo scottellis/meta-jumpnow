@@ -65,10 +65,18 @@ EXTRA_TOOLS_INSTALL = " \
     ethtool \
     findutils \
     less \
+    nano \
     sysfsutils \
     unzip \
     wget \
     zip \
+ "
+
+ALSA_TOOLS = " \
+    alsa-lib \
+    alsa-lib-dev \
+    alsa-tools \
+    alsa-utils \
  "
 
 MISC_EXTRA = ""
@@ -82,6 +90,7 @@ IMAGE_INSTALL += " \
     ${DEV_SDK_INSTALL} \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
+    ${ALSA_TOOLS} \
     ${MISC_EXTRA} \
     ${WIFI_SUPPORT} \
  "
