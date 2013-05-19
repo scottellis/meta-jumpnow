@@ -61,8 +61,14 @@ DEV_SDK_INSTALL = " \
  "
 
 EXTRA_TOOLS_INSTALL = " \
+    bzip2 \
     ethtool \
+    findutils \
+    less \
     sysfsutils \
+    unzip \
+    wget \
+    zip \
  "
 
 MISC_EXTRA = ""
