@@ -23,11 +23,11 @@ MACHINE_FEATURES_forcevariable = "alsa ext3 kernel26 screen uboot usbgadget usbh
 BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
 
-#MACHINE = "overo"
+#MACHINE ?= "overo"
 # if mcbsp is required, have to use the 3.2 kernel
 #PREFERRED_VERSION_linux-gumstix = "3.2"
 
-MACHINE = "duovero"
+MACHINE ?= "duovero"
 
 DL_DIR ?= "/oe-sources"
 
