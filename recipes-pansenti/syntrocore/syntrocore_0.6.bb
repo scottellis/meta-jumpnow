@@ -7,9 +7,11 @@ inherit qt4e
 
 DEPENDS += "pkgconfig"
 
+PR = "1"
+
 SRC_URI = "ftp://www.pansenti.com/syntro/SyntroCore-${PV}.tgz"
-SRC_URI[md5sum] = "0af051aa2ddf44a5bf83fd0f84b6060b"
-SRC_URI[sha256sum] = "84a6ae5f62f02f9ed5835e75d8fa7a4bdcb14b0334070ef20d83f7910dfab37b"
+SRC_URI[md5sum] = "f2b2978e6cdeb33ea504bd81884c3dca"
+SRC_URI[sha256sum] = "d722ae618528c737a7be6db7297746a34369ffcaeab9c9797a3743bcfd07e91e"
 
 S = "${WORKDIR}"
 
@@ -18,8 +20,8 @@ do_install() {
     make install
 
     install -d ${D}${libdir}/pkgconfig/
-    install -m 0644 ${S}/syntro.pc ${D}${libdir}/pkgconfig/
+    install -m 0644 ${S}/SyntroLib/syntro.pc ${D}${libdir}/pkgconfig/
 }
 
-FILES_${PN} = "${libdir}"
+FILES_${PN} = "${libdir} ${bindir}"
 
