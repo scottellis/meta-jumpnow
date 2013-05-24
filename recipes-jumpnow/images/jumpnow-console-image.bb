@@ -2,8 +2,11 @@
 
 require jumpnow-boot-image.bb
 
-CORE_TOOLS = " \
+CORE_OS = " \
+    avahi \
+    busybox-hwclock \
     task-core-ssh-openssh openssh-keygen \
+    tzdata \
  "
 
 # Custom kernel modules built out of tree
@@ -86,7 +89,7 @@ MISC_EXTRA_overo = " \
  "
 
 IMAGE_INSTALL += " \
-    ${CORE_TOOLS} \
+    ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
