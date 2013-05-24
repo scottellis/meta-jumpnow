@@ -7,9 +7,11 @@ inherit qt4e pkgconfig
 
 DEPENDS += "syntrocore"
 
-SRC_URI = "ftp://www.pansenti.com/syntro/SyntroV4LCamera-${PV}.tgz"
-SRC_URI[md5sum] = "3699c2bec63462e0355395ade76c1531"
-SRC_URI[sha256sum] = "5696a001eabde6b663785b1efff29ca2f3c3b192536a5dd963c67ca6fe2bdd0a"
+PR = "2"
+
+SRC_URI = "ftp://www.pansenti.com/syntro/SyntroV4LCamera-${PV}.tar.bz2"
+SRC_URI[md5sum] = "4bfee15d0091b82eb0850977c18f03a9"
+SRC_URI[sha256sum] = "1af63809f3a36fcbb72b5d15ce9af24c03d62c35114bab9b3c5368810a779211"
 
 S = "${WORKDIR}"
 

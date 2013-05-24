@@ -7,11 +7,11 @@ inherit qt4e
 
 DEPENDS += "pkgconfig"
 
-PR = "1"
+PR = "2"
 
-SRC_URI = "ftp://www.pansenti.com/syntro/SyntroCore-${PV}.tgz"
-SRC_URI[md5sum] = "f2b2978e6cdeb33ea504bd81884c3dca"
-SRC_URI[sha256sum] = "d722ae618528c737a7be6db7297746a34369ffcaeab9c9797a3743bcfd07e91e"
+SRC_URI = "ftp://www.pansenti.com/syntro/SyntroCore-${PV}.tar.bz2"
+SRC_URI[md5sum] = "beee8e61b32018272c5e7ee75f46c489"
+SRC_URI[sha256sum] = "40ac4930f553dc3fd6796e1c275940ee215e3a720a886db854339b6f8fe202ef"
 
 S = "${WORKDIR}"
 
