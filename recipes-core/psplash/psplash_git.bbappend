@@ -1,4 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-SRC_URI += "file://no-progress.patch"
+PRINC := "${@int(PRINC) + 1}"
+
+# SRC_URI += "file://no-progress.patch"
 
