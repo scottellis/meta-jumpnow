@@ -67,9 +67,11 @@ EXTRA_TOOLS_INSTALL = " \
     bzip2 \
     ethtool \
     findutils \
+    iperf \
     less \
     nano \
     sysfsutils \
+    tcpdump \
     unzip \
     wget \
     zip \
