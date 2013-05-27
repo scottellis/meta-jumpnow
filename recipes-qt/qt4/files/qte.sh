@@ -14,5 +14,6 @@ fi
 # for native development convenience
 if [ -e /usr/share/qtopia/environment-setup ]; then
     source /usr/share/qtopia/environment-setup
+    export OE_QMAKE_STRIP=/usr/bin/strip
 fi
 
