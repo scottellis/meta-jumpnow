@@ -67,6 +67,7 @@ EXTRA_TOOLS_INSTALL = " \
     bzip2 \
     ethtool \
     findutils \
+    i2c-tools \
     iperf \
     less \
     nano \
