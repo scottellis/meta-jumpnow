@@ -1,0 +1,13 @@
+diff --git a/arch/arm/boot/dts/am33xx.dtsi b/arch/arm/boot/dts/am33xx.dtsi
+index eb0d2d4..513dc10 100644
+--- a/arch/arm/boot/dts/am33xx.dtsi
++++ b/arch/arm/boot/dts/am33xx.dtsi
+@@ -436,7 +436,7 @@
+ 			multipoint = <1>;
+ 			num-eps = <16>;
+ 			ram-bits = <12>;
+-			port0-mode = <3>;
++			port0-mode = <1>;
+ 			port1-mode = <1>;
+ 			power = <250>;
+ 			ti,hwmods = "usb_otg_hs";
