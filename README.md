@@ -10,6 +10,11 @@ This layer depends on:
         revision: HEAD
         commit: e373f9c
 
+        URI: git://github.com/beagleboard/meta-beagleboard.git
+        branch: master
+        revision: HEAD
+        commit: d633314
+
         meta-jumpnow layer maintainer: Scott Ellis <scott@pansenti.com>
 
 Some notes for setting up and using this repository can be found here 

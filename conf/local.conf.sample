@@ -5,8 +5,7 @@
 # From [denzil] branch, until I decide whether to bring in meta-openembedded
 BBMASK = "meta-jumpnow/recipes-graphics"
 BBMASK .= "|meta-jumpnow/recipes-support/opencv"
-# just started with this, not working yet
-BBMASK .= "|meta-beagleboard"
+BBMASK .= "|meta-beagleboard/meta-beagleboard-extras"
 
 # This is sufficient for most of our projects
 DISTRO_FEATURES = "alsa directfb ext2 keyboard serial usbgadget usbhost wifi ${DISTRO_FEATURES_LIBC}"
@@ -27,7 +26,10 @@ PARALLEL_MAKE = "-j 4"
 # if mcbsp is required, have to use the 3.2 kernel
 #PREFERRED_VERSION_linux-gumstix = "3.2"
 
-MACHINE ?= "duovero"
+#MACHINE ?= "duovero"
+
+MACHINE ?= "beaglebone"
+PREFERRED_PROVIDER_virtual/bootloader_beaglebone = "u-boot-denx"
 
 DL_DIR ?= "/oe-sources"
 

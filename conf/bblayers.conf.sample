@@ -9,6 +9,7 @@ BBLAYERS ?= " \
   /home/scott/poky-dylan/meta \
   /home/scott/poky-dylan/meta-yocto \
   /home/scott/poky-dylan/meta-gumstix \
+  /home/scott/poky-dylan/meta-beagleboard/common-bsp \
   /home/scott/jumpnow-dylan/meta-jumpnow \
   "
 
