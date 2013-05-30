@@ -8,7 +8,7 @@ fi
 if [[ -z "${OETMP}" ]]; then
 	echo "Working from local directory"
 else
-	echo "Using OETMP $OETMP"
+	echo -e "\nOETMP: $OETMP"
 
 	if [ -d ${OETMP}/deploy/images ]; then
 		cd ${OETMP}/deploy/images
@@ -23,7 +23,7 @@ if [[ -z "${MACHINE}" ]]; then
 	echo "Example: export MACHINE=overo or export MACHINE=duovero"
 	exit 1
 else
-	echo "Using MACHINE $MACHINE"
+	echo -e "MACHINE: $MACHINE\n"
 fi
 
 DEV=/dev/${1}1
@@ -56,7 +56,7 @@ if [ -b $DEV ]; then
 	echo "Unmounting ${DEV}"
 	sudo umount ${DEV}
 else
-	echo -e "\nBlock special file $DEV does not exist!\n"
+	echo -e "\nBlock device $DEV does not exist!\n"
 fi
 
 
