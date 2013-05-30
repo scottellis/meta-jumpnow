@@ -36,7 +36,7 @@ WIFI_SUPPORT = " \
  "
 
 WIFI_SUPPORT_duovero = " \
-    linux-firmware-sd8687 \
+    linux-firmware-sd8787 \
     linux-firmware-rtl8192ce \
     linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
@@ -111,6 +111,13 @@ IMAGE_INSTALL += " \
     ${MISC_EXTRA} \
     ${WIFI_SUPPORT} \
  "
+
+set_local_timezone() {
+    ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
+}
+
+ROOTFS_POSTPROCESS_COMMAND += "set_local_timezone ; "
+
 
 export IMAGE_BASENAME = "jumpnow-console-image"
 
