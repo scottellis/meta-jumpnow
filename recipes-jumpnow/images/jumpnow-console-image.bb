@@ -5,6 +5,8 @@ require jumpnow-boot-image.bb
 CORE_OS = " \
     avahi \
     busybox-hwclock \
+    ntp \
+    ntp-tickadj \
     task-core-ssh-openssh openssh-keygen \
     tzdata \
  "
@@ -26,6 +28,15 @@ KERNEL_EXTRA_INSTALL = " \
  "
 
 WIFI_SUPPORT = " \
+    linux-firmware-rtl8192ce \
+    linux-firmware-rtl8192cu \
+    linux-firmware-rtl8192su \
+    linux-firmware-wl12xx \
+    wpa-supplicant \
+ "
+
+WIFI_SUPPORT_duovero = " \
+    linux-firmware-sd8687 \
     linux-firmware-rtl8192ce \
     linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
