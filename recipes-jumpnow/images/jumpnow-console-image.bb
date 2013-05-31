@@ -92,8 +92,6 @@ EXTRA_TOOLS_INSTALL = " \
 ALSA_TOOLS = " \
     alsa-lib \
     alsa-lib-dev \
-    alsa-tools \
-    alsa-utils \
  "
 
 MISC_EXTRA = ""
