@@ -1,23 +1,21 @@
 # Local configuration for meta-jumpnow images
-# Used primarily for Gumstix Overo and Duovero systems
 # Yocto Project 1.4 Poky distribution 9.0, [dylan] branch
 
-# From [denzil] branch, until I decide whether to bring in meta-openembedded
 BBMASK = "meta-jumpnow/recipes-graphics"
 BBMASK .= "|meta-jumpnow/recipes-support/opencv"
 BBMASK .= "|meta-beagleboard/meta-beagleboard-extras"
 
 # This is sufficient for most of our projects
-DISTRO_FEATURES = "alsa directfb ext2 keyboard serial usbgadget usbhost wifi ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES = "ext2 keyboard usbhost wifi ${DISTRO_FEATURES_LIBC}"
 
 # Additional distro features you might want to add: 
-# 3g, bluetooth, irda, nfc, nfs, pci, vfat, x11, zeroconf 
+# alsa, bluetooth, irda, nfc, nfs, pci, usbgadget, vfat, x11, zeroconf 
 
 # force this output type for all MACHINES, significantly smaller in size
 IMAGE_FSTYPES_forcevariable = "tar.xz"
 
 # override the mix in the meta-gumstix/conf/machine configuration files
-MACHINE_FEATURES_forcevariable = "alsa ext3 kernel26 screen uboot usbgadget usbhost vfat"
+MACHINE_FEATURES_forcevariable = "ext2 screen serial usbhost"
 
 BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
@@ -26,9 +24,9 @@ PARALLEL_MAKE = "-j 4"
 # if mcbsp is required, have to use the 3.2 kernel
 #PREFERRED_VERSION_linux-gumstix = "3.2"
 
-#MACHINE ?= "duovero"
+MACHINE ?= "duovero"
 
-MACHINE ?= "beaglebone"
+#MACHINE ?= "beaglebone"
 PREFERRED_PROVIDER_virtual/bootloader_beaglebone = "u-boot-denx"
 
 DL_DIR ?= "/oe-sources"
