@@ -90,6 +90,7 @@ EXTRA_TOOLS_INSTALL = " \
  "
 
 ALSA_TOOLS = " \
+    alsa-dev \
     alsa-lib \
     alsa-lib-dev \
  "
